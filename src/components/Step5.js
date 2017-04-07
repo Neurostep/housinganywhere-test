@@ -15,12 +15,16 @@ class Step5 extends Component {
     this.onButtonClick = this.onButtonClick.bind(this);
   }
   onButtonClick() {
+    let { step1, step2, step3, step4 } = this.props.Steps;
     this.setState({
       submitting: true
     });
-    this.props.actions.setText(
-      this.props.Steps
-    ).then(
+    this.props.actions.setText({
+      a: step1,
+      b: step2,
+      text: step3,
+      c: step4
+    }).then(
         () => {
           this.setState({
             submitting: false,
