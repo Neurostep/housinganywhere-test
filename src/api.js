@@ -14,7 +14,6 @@ export function submitIt(data) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
       if (Math.random() < 0.5) {
-        console.log("AAAA", data);
         resolve(data);
         return;
       }
