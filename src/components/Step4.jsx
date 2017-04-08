@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { FormGroup, FormControl } from 'react-bootstrap';
 import set from '../actions/step4';
 
-class Step4 extends Component {
+export class Step4 extends Component {
   constructor(props) {
     super(props);
     this.onSelectChange = this.onSelectChange.bind(this);

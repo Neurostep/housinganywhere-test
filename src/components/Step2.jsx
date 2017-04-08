@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { FormGroup, Radio } from 'react-bootstrap';
 import set from '../actions/step2';
 
-class Step2 extends Component {
+export class Step2 extends Component {
   constructor(props) {
     super(props);
     this.onItemChange = this.onItemChange.bind(this);

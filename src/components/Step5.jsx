@@ -5,7 +5,7 @@ import { FormGroup, Button, Alert } from 'react-bootstrap';
 import submit from '../actions/step5';
 import './Step5.css';
 
-class Step5 extends Component {
+export class Step5 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,7 +45,7 @@ class Step5 extends Component {
     }
     return (
       <FormGroup>
-        <Button disabled={this.state.submitting} onClick={this.onButtonClick}>
+        <Button type="button" disabled={this.state.submitting} onClick={this.onButtonClick}>
           {this.state.submitting ? 'Submitting...' : 'Submit'}
         </Button>
         {this.state.error &&

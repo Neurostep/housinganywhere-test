@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { FormGroup, Checkbox } from 'react-bootstrap';
 import * as Step1Actions from '../actions/step1';
 
-class Step1 extends Component {
+export class Step1 extends Component {
   constructor(props) {
     super(props);
     this.onItemChange = this.onItemChange.bind(this);

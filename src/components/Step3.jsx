@@ -5,7 +5,7 @@ import { FormGroup, FormControl, Button, Alert } from 'react-bootstrap';
 import setText from '../actions/step3';
 import './Step3.css';
 
-class Step3 extends Component {
+export class Step3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
