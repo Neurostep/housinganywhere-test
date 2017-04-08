@@ -1,7 +1,8 @@
 import { checkIt } from '../api';
+import { STEP3_SET } from '../constants';
 
 const set = val => ({
-  type: 'setStep3',
+  type: STEP3_SET,
   item: val,
 });
 

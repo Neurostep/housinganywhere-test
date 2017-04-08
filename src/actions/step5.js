@@ -1,7 +1,8 @@
 import { submitIt } from '../api';
+import { STEP5_SET } from '../constants';
 
 const set = item => ({
-  type: 'setStep5',
+  type: STEP5_SET,
   item,
 });
 

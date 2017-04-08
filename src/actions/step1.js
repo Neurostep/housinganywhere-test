@@ -1,9 +1,11 @@
+import { STEP1_ADD, STEP1_DELETE } from '../constants';
+
 export const add = item => ({
-  type: 'addStep1',
+  type: STEP1_ADD,
   item,
 });
 
 export const del = item => ({
-  type: 'deleteStep1',
+  type: STEP1_DELETE,
   item,
 });

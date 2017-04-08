@@ -1,3 +1,11 @@
+import {
+  STEP1_ADD,
+  STEP1_DELETE,
+  STEP2_SET,
+  STEP3_SET,
+  STEP4_SET,
+} from '../constants';
+
 const defaultState = {
   step1: [],
   step2: '',
@@ -6,14 +14,14 @@ const defaultState = {
 };
 export default(state = defaultState, payload) => {
   switch (payload.type) {
-    case 'addStep1':
+    case STEP1_ADD:
       return {
         step1: [...state.step1, payload.item],
         step2: state.step2,
         step3: state.step3,
         step4: state.step4,
       };
-    case 'deleteStep1': {
+    case STEP1_DELETE: {
       const newState = {};
       newState.step1 = state.step1.filter(item => item !== payload.item);
       if (!newState.step1.length) {
@@ -27,21 +35,21 @@ export default(state = defaultState, payload) => {
       }
       return newState;
     }
-    case 'setStep2':
+    case STEP2_SET:
       return {
         step1: [...state.step1],
         step2: payload.item,
         step3: state.step3,
         step4: state.step4,
       };
-    case 'setStep3':
+    case STEP3_SET:
       return {
         step1: [...state.step1],
         step2: state.step2,
         step3: payload.item,
         step4: state.step4,
       };
-    case 'setStep4':
+    case STEP4_SET:
       return {
         step1: [...state.step1],
         step2: state.step2,

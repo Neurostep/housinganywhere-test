@@ -1,4 +1,6 @@
+import { STEP4_SET } from '../constants';
+
 export default item => ({
-  type: 'setStep4',
+  type: STEP4_SET,
   item,
 });
