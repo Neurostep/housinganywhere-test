@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as Step2Actions from '../actions/step2';
 import { FormGroup, Radio } from 'react-bootstrap';
+import set from '../actions/step2';
 
 class Step2 extends Component {
   constructor(props) {
@@ -10,7 +10,7 @@ class Step2 extends Component {
     this.onItemChange = this.onItemChange.bind(this);
   }
   onItemChange(e) {
-    let el = e.target;
+    const el = e.target;
     if (el.checked) {
       this.props.actions.set(el.value);
     }
@@ -28,15 +28,24 @@ class Step2 extends Component {
   }
 }
 
-function mapStateToProps(state, props) {
+Step2.propTypes = {
+  actions: React.PropTypes.shape({
+    set: React.PropTypes.func.isRequired,
+  }).isRequired,
+  Steps: React.PropTypes.shape({
+    step1: React.PropTypes.array.isRequired,
+  }).isRequired,
+};
+
+function mapStateToProps(state) {
   return {
-    Steps: state.Steps
+    Steps: state.Steps,
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(Step2Actions, dispatch)
+    actions: bindActionCreators({ set }, dispatch),
   };
 }
 

@@ -1,6 +1,4 @@
-export const set = (item) => {
-  return {
-    type: 'setStep4',
-    item
-  };
-};
+export default item => ({
+  type: 'setStep4',
+  item,
+});

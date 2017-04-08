@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
-import * as Step1Actions from '../actions/step1';
 import { FormGroup, Checkbox } from 'react-bootstrap';
+import * as Step1Actions from '../actions/step1';
 
 class Step1 extends Component {
   constructor(props) {
@@ -10,12 +10,12 @@ class Step1 extends Component {
     this.onItemChange = this.onItemChange.bind(this);
   }
   onItemChange(e) {
-      let el = e.target;
-      if (el.checked) {
-          this.props.actions.add(el.value);
-      } else {
-          this.props.actions.del(el.value);
-      }
+    const el = e.target;
+    if (el.checked) {
+      this.props.actions.add(el.value);
+    } else {
+      this.props.actions.del(el.value);
+    }
   }
   render() {
     return (
@@ -26,6 +26,13 @@ class Step1 extends Component {
     );
   }
 }
+
+Step1.propTypes = {
+  actions: React.PropTypes.shape({
+    add: React.PropTypes.func.isRequired,
+    del: React.PropTypes.func.isRequired,
+  }).isRequired,
+};
 
 function mapDispatchToProps(dispatch) {
   return {

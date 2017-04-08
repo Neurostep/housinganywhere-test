@@ -1,21 +1,17 @@
-import { submitIt } from "../api";
+import { submitIt } from '../api';
 
-const set = (item) => {
-    return {
-        type: "setStep5",
-        item
-    };
-};
+const set = item => ({
+  type: 'setStep5',
+  item,
+});
 
-export const setText = (item) => {
-    return function(dispatch) {
-        return submitIt(item)
-            .then(
-                val => dispatch(set(item)),
-                err => {
-                  dispatch(set({}));
-                  throw err;
-                }
-            );
-    };
-};
+export default item =>
+  dispatch =>
+    submitIt(item)
+      .then(
+        val => dispatch(set(val)),
+        (err) => {
+          dispatch(set({}));
+          throw err;
+        },
+    );

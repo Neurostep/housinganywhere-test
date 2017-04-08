@@ -1,6 +1,7 @@
-import Steps from './Steps';
 import { combineReducers } from 'redux';
+import Steps from './Steps';
+
 const rootReducer = combineReducers({
-    Steps,
+  Steps,
 });
 export default rootReducer;
