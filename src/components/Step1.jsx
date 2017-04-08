@@ -36,7 +36,7 @@ Step1.propTypes = {
 
 function mapDispatchToProps(dispatch) {
   return {
-    actions: bindActionCreators(Step1Actions, dispatch)
+    actions: bindActionCreators(Step1Actions, dispatch),
   };
 }
 
